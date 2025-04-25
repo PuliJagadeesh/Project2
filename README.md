@@ -4,8 +4,11 @@ This repository contains 2implementation of gradient-boosted classification tree
 ## Team Details
 
 Jagadeesh Puli A20544413 
+
 Satya Subhash Yellina A20545769 
+
 Uday Kiran Muppavarapu A20544881 
+
 Alekya Sammangi A20537774 
 
 ---
