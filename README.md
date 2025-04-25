@@ -213,7 +213,7 @@ Our pytest suite then exercises:
 
 Passing these tests ensures both the **core boosting logic** and the **robustness checks** are functioning as intended..
 
-**Q: What hyperparameters can I tune?**
+**Q: What parameters have you exposed to users of your implementation in order to tune performance?**
 
 - `n_estimators`  
   Number of boosting rounds (i.e. how many trees are added).  More trees can improve fit but increase runtime and risk overfitting.
@@ -238,7 +238,7 @@ Passing these tests ensures both the **core boosting logic** and the **robustnes
 
 
 **Q: Any inputs the model struggles with?**  
-Small datasets with extremely low sample counts or highly imbalanced rare-class scenarios can be unstable.  In our visualization notebook you’ll see that after ≈10 iterations the validation and training curves diverge—indicating overfitting.  We plan to add:
+Small datasets with extremely low sample counts or highly imbalanced rare-class scenarios can be unstable.  In our visualization notebook you’ll see that after ≈10 iterations the validation and training curves diverge—indicating overfitting. Given more time, We could add:
 
 - **Lower early-stop thresholds** (e.g. 5 rounds)  
 - **Adaptive learning-rate schedules** (decay η as training progresses)  
