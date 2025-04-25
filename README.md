@@ -176,7 +176,6 @@ In addition, the model offers:
 
 - **`predict_proba`** and `predict`  
 - **`evaluate`**: accuracy, precision, recall, F1, confusion matrix  
-- **Custom loss** plug-in  
 - **Error-handling** for bad inputs and calling methods before fitting  
 
 You can use this model for classification purpose, as it can compete with state of the art algorithms, and less computationally cost compare to neural networks. We have tested our model on digit classification from 1 to 10 and receieved 95% accuracy. 
