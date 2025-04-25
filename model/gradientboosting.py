@@ -179,6 +179,14 @@ class GradientBoostingClassifier:
         """Fitting the gradient boosting model to the training data."""
         # Validating and storing training data
         X_arr, y_arr = self._validate_inputs(X, y)
+        if np.isnan(X_arr).any() or np.isnan(y_arr).any():
+            raise ValueError("Input contains NaN values.")
+        # Reject too-few samples or only one class
+        if len(X_arr) < self.min_samples_split or len(np.unique(y_arr)) < 2:
+           raise ValueError("Need at least two samples from two classes to fit.")
+        # Ensuring class labels are integer for one-hot indexing
+        if not np.issubdtype(y_arr.dtype, np.integer):
+            y_arr = y_arr.astype(int)
         self.n_classes_ = len(np.unique(y_arr))
         self.n_features_ = X_arr.shape[1]
         self.X_train_, self.y_train_ = X_arr, y_arr
@@ -293,6 +301,8 @@ class GradientBoostingClassifier:
         if not self.is_fitted_:
             raise ModelNotFittedError("Model has not been fitted yet.")
         X_arr, y_arr = self._validate_inputs(X, y)
+        if not np.issubdtype(y_arr.dtype, np.integer):
+            y_arr = y_arr.astype(int)
         proba = self.predict_proba(X_arr)
         preds = self.predict(X_arr)
         # Building confusion matrix
