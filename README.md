@@ -28,7 +28,6 @@ In addition, the model offers:
 
 - **`predict_proba`** and `predict`  
 - **`evaluate`**: accuracy, precision, recall, F1, confusion matrix  
-- **Custom loss** plug-in  
 - **Error-handling** for bad inputs and calling methods before fitting  
 
 ---
